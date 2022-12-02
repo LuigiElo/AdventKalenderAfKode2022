@@ -20,11 +20,31 @@ Find the Elf carrying the most Calories. How many total Calories is that Elf car
         private static int[] elf4 = new int[] { 7000, 8000, 9000 };
         private static int[] elf5 = new int[] { 10000 };
 
-        public static int[] getHungriestElf()
+        private static List<List<int>>? readInput()
         {
-            int[][] elfCalories = new int[][] { elf1, elf2, elf3, elf4, elf5 };
+            string text = System.IO.File.ReadAllText(@"inputDay1.txt");
+            string[] lines = text.Split(new string[] { Environment.NewLine+ Environment.NewLine }, StringSplitOptions.None);
+            List<List<int>> linesList = lines.ToList().Select((line) => line.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList().Select((item) => Int32.Parse(item)).ToList()).ToList();
 
-            return elfCalories.ToList().OrderByDescending((elf) => elf.Sum()).First();
+            return linesList;
+        }
+
+        public static int getHungriestElfCalories()
+        {
+            List<List<int>>? elfList = readInput();
+            List<int> list = elfList.ToList()
+                .OrderByDescending((elf) => elf.Sum())
+                .First();
+
+            return list.Sum();
+        }
+
+        public static int getTopHungriestElfCalories(int top)
+        {
+            List<List<int>>? elfList = readInput();
+            List<int> list = elfList.Select((elf) => elf.Sum()).ToList().OrderByDescending((elf) => elf ).Take(top).ToList();
+
+            return list.Sum();
         }
 
     }
