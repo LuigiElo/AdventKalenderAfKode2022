@@ -1,6 +1,6 @@
 namespace AdventKalenderAfKode2022
 {
-    public static class Day1
+    public static class DayOne
     {
         /**This list represents the Calories of the food carried by five Elves:
 
@@ -14,11 +14,6 @@ In case the Elves get hungry and need extra snacks, they need to know which Elf 
 In the example above, this is 24000 (carried by the fourth Elf).
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
         **/
-        private static int[] elf1 = new int[] { 1000, 2000, 3000 };
-        private static int[] elf2 = new int[] { 4000 };
-        private static int[] elf3 = new int[] { 5000, 6000 };
-        private static int[] elf4 = new int[] { 7000, 8000, 9000 };
-        private static int[] elf5 = new int[] { 10000 };
 
         private static List<List<int>>? readInput()
         {
