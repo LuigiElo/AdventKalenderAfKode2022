@@ -20,6 +20,14 @@
             Console.Write(DayThree.calculatePriorities());
             
             Console.WriteLine("Day 3 - 2nd challenge ----> " + DayThree.calculatePrioritiesByBadge());
+
+            Console.WriteLine("Day 4 - 1st challenge ----> " + DayFour.getRange());
+
+            Console.WriteLine("Day 4 - 2nd challenge ----> " + DayFour.getOverlaps());
+
+            Console.WriteLine("Day 5 - 1st challenge ----> " + DayFive.stackTop());
+            
+            Console.WriteLine("Day 5 - 2nd challenge ----> " + DayFive.stackTop(true));
         }
     }
 }

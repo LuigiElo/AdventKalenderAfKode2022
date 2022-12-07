@@ -42,7 +42,7 @@ namespace AdventKalenderAfKode2022
         private static List<List<Shapes>>? readInput()
         {
             string text = System.IO.File.ReadAllText(@"DayTwo\input.txt");
-            string[] lines = text.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            string[] lines = text.Split(new string[] { "\n" }, StringSplitOptions.None);
             List<List<Shapes>> linesList = lines.ToList().Select((line) => line.Split(new string[] { " " }, StringSplitOptions.None).ToList().Select((item) => (Shapes)Char.Parse(item)).ToList()).ToList();
 
             return linesList;
